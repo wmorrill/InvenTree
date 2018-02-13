@@ -145,7 +145,7 @@ class PartParameter(models.Model):
     """
 
     part = models.ForeignKey(Part, on_delete=models.CASCADE, related_name='parameters')
-    template = models.ForeignKey(PartParameterTemplate)
+    template = models.ForeignKey(PartParameterTemplate, on_delete=models.CASCADE)
 
     # Value data
     value = models.CharField(max_length=50, blank=True)

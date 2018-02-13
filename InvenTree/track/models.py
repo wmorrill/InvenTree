@@ -24,9 +24,9 @@ class UniquePart(models.Model):
                                      editable=False)
     serial = models.IntegerField()
 
-    createdBy = models.ForeignKey(User)
+    createdBy = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    customer = models.ForeignKey(Customer, blank=True, null=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, blank=True, null=True)
 
     # Part status types
     PART_IN_PROGRESS = 0
